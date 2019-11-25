@@ -2,6 +2,7 @@
 var bespoke = require('bespoke');
 var classes = require('bespoke-classes');
 var nav = require('bespoke-nav');
+var forms = require('bespoke-forms');
 var scale = require('bespoke-scale');
 var bullets = require('bespoke-bullets');
 var hash = require('bespoke-hash');
@@ -9,9 +10,10 @@ var multimedia = require('bespoke-multimedia');
 var extern = require('bespoke-extern');
 
 // Bespoke.js
-bespoke.from({ parent: 'article.deck', slides: 'section' }, [
+var deck = bespoke.from({ parent: 'article.deck', slides: 'section' }, [
   classes(),
   nav(),
+  forms(),
   scale(),
   bullets('.build, .build-items > *:not(.build-items)'),
   hash(),
