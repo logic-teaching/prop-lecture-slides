@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>A Simple Template for Carnap Slides</title>
+<link rel="stylesheet" type="text/css" href="build/build.css">
+<link rel='stylesheet', type='text/css', href='https://carnap.io/static/css/exercises.css'>
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans|Open+Sans&display=swap" rel="stylesheet">
+<script src='https://carnap.io/static/ghcjs/rts.js'></script>
+<script src='https://carnap.io/static/ghcjs/allactions/lib.js'></script>
+<script src='https://carnap.io/static/ghcjs/allactions/out.js'></script>
+</head>
+<body>
+<article class="deck">
+
+  <section>
+    <h1>Slide Template</h1>
+    <p>Navigate with left and right keys. </p>
+    <p>Swiping will also work on a touch screen.</p>
+  </section>
+
+  <section>
+    <h2>Images</h2>
+    <img src="images/CarnapLine.png">
+  </section>
+
+  <section>
+  </section>
+
+  <section>
+      <p>Most Carnap exercises can be included</p>
+      <pre data-carnap-type="proofchecker"
+           data-carnap-goal=":|-:((P->Q)->P)->P"
+           data-carnap-submission="none"
+           data-carnap-system="prop"
+           data-carnap-guides="montague"
+           data-carnap-options="font resize">
+test
+      </pre>
+
+  <section>
+    <h2>Bullet List</h2>
+    <ul class="build build-items">
+      <li>Bullet 1</li>
+      <li>Bullet 2</li>
+      <li>Bullet 3</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Just the beginning…</h2><br>
+    <ul class="build build-items">
+      <li>Edit HTML markup in <em class="path">src/index.html</em></li>
+      <li>Edit <a href="http://stylus-lang.com">Stylus</a> styles in <em class="path">src/styles/user.styl</em></li>
+      <li>Edit JavaScript in <em class="path">src/scripts/main.js</em></li>
+    </ul>
+    <br>
+    <ul class="build">
+      Powered by Bespoke JS, due to <a href="https://twitter.com/markdalgleish"> -@markdalgleish</a></li>
+    </ul>
+  </section>
+</article>
+
+<script src="build/build.js"></script>
+<script src='https://carnap.io/static/ghcjs/allactions/runmain.js'>
+
+</body>
+</html>
