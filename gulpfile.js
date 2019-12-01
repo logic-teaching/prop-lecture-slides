@@ -25,7 +25,7 @@ var pkg = require('./package.json'),
     this.emit('end');
   };
 
-gulp.task('js', ['clean:js'], function() {
+gulp.task('js', gulp.series(clean_js, function() {
   // see https://wehavefaces.net/gulp-browserify-the-gulp-y-way-bb359b3f9623
   return browserify('src/scripts/main.js').bundle()
     .on('error', browserifyPlumber)
@@ -35,15 +35,15 @@ gulp.task('js', ['clean:js'], function() {
     .pipe(rename('build.js'))
     .pipe(gulp.dest('dist/build'))
     .pipe(connect.reload());
-});
+}));
 
-gulp.task('html', ['clean:html'], function() {
+gulp.task('html', gulp.series(clean_html, function() {
   return gulp.src('src/*.html')
     .pipe(gulp.dest('dist'))
     .pipe(connect.reload());
-});
+}));
 
-gulp.task('css', ['clean:css'], function() {
+gulp.task('css', gulp.series(clean_css, function() {
   return gulp.src('src/styles/main.styl')
     .pipe(isDist ? through() : plumber())
     .pipe(stylus({ 'include css': true, paths: ['./node_modules'] }))
@@ -52,65 +52,51 @@ gulp.task('css', ['clean:css'], function() {
     .pipe(rename('build.css'))
     .pipe(gulp.dest('dist/build'))
     .pipe(connect.reload());
-});
+}));
 
-gulp.task('images', ['clean:images'], function() {
+gulp.task('images', gulp.series(clean_images, function() {
   return gulp.src('src/images/**/*')
     .pipe(gulp.dest('dist/images'))
     .pipe(connect.reload());
-});
+}));
 
-gulp.task('fonts', ['clean:fonts'], function() {
+gulp.task('fonts', gulp.series(clean_fonts, function() {
   return gulp.src('src/fonts/*')
     .pipe(gulp.dest('dist/fonts'))
     .pipe(connect.reload());
-});
+}));
 
-gulp.task('clean', function() {
-  return del.sync('dist');
-});
+function clean_html () { return del('dist/*.html'); };
 
-gulp.task('clean:html', function() {
-  return del('dist/*.html');
-});
+function clean_js () { return del('dist/build/build.js'); };
 
-gulp.task('clean:js', function() {
-  return del('dist/build/build.js');
-});
+function clean_css () { return del('dist/build/build.css'); };
 
-gulp.task('clean:css', function() {
-  return del('dist/build/build.css');
-});
+function clean_images () { return del('dist/images'); };
 
-gulp.task('clean:images', function() {
-  return del('dist/images');
-});
+function clean_fonts () { return del('dist/fonts'); };
 
-gulp.task('clean:fonts', function() {
-  return del('dist/fonts');
-});
+gulp.task('build',  gulp.parallel('js', 'html', 'css', 'images', 'fonts'));
 
-gulp.task('connect', ['build'], function() {
+gulp.task('connect', gulp.series('build', function() {
   connect.server({ root: 'dist', port: process.env.PORT || 8080, livereload: true });
-});
+}));
 
 gulp.task('watch', function() {
-  gulp.watch('src/**/*.html', ['html']);
-  gulp.watch('src/scripts/**/*.js', ['js']);
-  gulp.watch('src/styles/**/*.styl', ['css']);
-  gulp.watch('src/images/**/*', ['images']);
-  gulp.watch('src/fonts/*', ['fonts']);
+  gulp.watch('src/**/*.html', gulp.series('html'));
+  gulp.watch('src/scripts/**/*.js', gulp.series('js'));
+  gulp.watch('src/styles/**/*.styl', gulp.series('css'));
+  gulp.watch('src/images/**/*', gulp.series('images'));
+  gulp.watch('src/fonts/*', gulp.series('fonts'));
 });
 
-gulp.task('publish', ['clean', 'build'], function(done) {
+gulp.task('publish', gulp.series('build', function(done) {
   ghpages.publish(path.join(__dirname, 'dist'), { logger: gutil.log }, done);
-});
+}));
 
 // old alias for publishing on gh-pages
-gulp.task('deploy', ['publish']);
+gulp.task('deploy', gulp.series('publish'));
 
-gulp.task('build', ['js', 'html', 'css', 'images', 'fonts']);
+gulp.task('serve', gulp.parallel('connect', 'watch'));
 
-gulp.task('serve', ['connect', 'watch']);
-
-gulp.task('default', ['build']);
+gulp.task('default', gulp.series('build'));
