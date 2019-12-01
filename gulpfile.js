@@ -9,8 +9,8 @@ var pkg = require('./package.json'),
   del = require('del'),
   ghpages = require('gh-pages'),
   gulp = require('gulp'),
-  gutil = require('gulp-util'),
   path = require('path'),
+  log = require('fancy-log'),
   plumber = require('gulp-plumber'),
   rename = require('gulp-rename'),
   source = require('vinyl-source-stream'),
@@ -21,7 +21,7 @@ var pkg = require('./package.json'),
   // browserifyPlumber fills the role of plumber() when working with browserify
   browserifyPlumber = function(e) {
     if (isDist) throw e;
-    gutil.log(e.stack);
+    log(e.stack);
     this.emit('end');
   };
 
@@ -47,7 +47,7 @@ gulp.task('css', gulp.series(clean_css, function() {
   return gulp.src('src/styles/main.styl')
     .pipe(isDist ? through() : plumber())
     .pipe(stylus({ 'include css': true, paths: ['./node_modules'] }))
-    .pipe(autoprefixer({ browsers: ['last 2 versions'], cascade: false }))
+    .pipe(autoprefixer({ cascade: false }))
     .pipe(isDist ? csso() : through())
     .pipe(rename('build.css'))
     .pipe(gulp.dest('dist/build'))
@@ -91,7 +91,7 @@ gulp.task('watch', function() {
 });
 
 gulp.task('publish', gulp.series('build', function(done) {
-  ghpages.publish(path.join(__dirname, 'dist'), { logger: gutil.log }, done);
+  ghpages.publish(path.join(__dirname, 'dist'), { logger: log }, done);
 }));
 
 // old alias for publishing on gh-pages
