@@ -22,147 +22,177 @@
 <script src='https://carnap.io/static/ghcjs/rts.js'></script>
 <script src='https://carnap.io/static/ghcjs/allactions/lib.js'></script>
 <script src='https://carnap.io/static/ghcjs/allactions/out.js'></script>
-<!-- These two scripts enable mathjax -->
-<script>
-MathJax = {
-  tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']]
-  }
-};
-</script>
-<script id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-</script>
 </head>
 <body>
 <article class="deck">
 
 
-  <!-- Slide -->
+  <!-- Each pair of section tags corresponds to one slide -->
   <section>
-  <h2>Determining truth-values</h2>
-  <p>The basic question is: how is the truth-value of a complex proposition a function of the truth-values of its corresponding parts? More specifically, we can ask: Consider $p\rightarrow (q\vee r)$. Suppose you knew that $r$ is false while $p,q$ are true. Is $p\rightarrow (q\vee r)$ true or false?</p>
-  <p>We develop a general method for answering these questions. This is useful since often the sentences whose truth we’re interested in are complex, and so the method gives us a way to determine truth/falsity based on prior knowledge of truth/ falsity of smaller components.</p>
+    <h1>Template for Carnap Slides Test Test</h1>
+    <p>This is a template for making your own interactive slides with Carnap.</p>
+    <p>The basic framework for everything is <a href="http://www.markdalgleish.com/projects/bespoke.js/">bespoke.js</a>.</p>
+    <p>Navigate with left and right keys. </p>
+    <p>Swiping will also work on a touch screen.</p>
   </section>
 
-  <!-- Slide -->
   <section>
-  <h2>Building more complex tables</h2>
-  <p>We describe a general method for building a truth-table for each proposition, even the complex ones like $p\rightarrow (q\vee r)$.</p>
-  <p>By following this method, we will have a big table that tells us what the truth-value of $p\rightarrow (q\vee r)$ is, given the truth-value of its components.</p>
-  <p>We build the big table by slowly decomposing the complex formula into its simpler components and successively applying the five truth tables for the propositional connectives which we have memorized.</p>
+      <p>You can view the slide-by-slide source code at:</p>
+      <p><a href="https://github.com/gleachkr/SlideTemplate/blob/master/src/slides-1.html">
+         https://github.com/gleachkr/SlideTemplate/blob/master/src/slides-1.html
+      </a></p>
+      <p>with some extra explanatory comments.</p>
   </section>
 
-  <!-- Slide -->
   <section>
-  <h2>Example 1</h2>
-  <p>The truth-tables come pre-populated with a row corresponding to each combination of the truth-values of the basic propositional letters. In this first example, there are two basic propositional letters $p$ and $q$, and so there are four rows. We fill out the columns corresponding to each connective, starting with the connectives that come first in the order in which the proposition is built up out the propositional letters.</p>
-  <pre data-carnap-type="truthtable"
-           data-carnap-goal="~(p\/q)"
+      <p>Your slides are just a webpage.</p>
+      <p>So you can include anything that can be included in a webpage:</p>
+  </section>
+
+  <section>
+    <h2>Images</h2>
+    <img height="80%" src="images/CarnapLine.png">
+  </section>
+
+  <section>
+    <h2>Videos</h2>
+       <!-- This is the standard method for importing from youtube -->
+       <iframe width="640" height="360" src="https://www.youtube.com/embed/AV3kYPutYfs?rel=0&amp;showinfo=0&amp;controls=0&amp;enablejsapi=1&amp;loop=1&amp;playlist=AV3kYPutYfs" frameborder="0" allowfullscreen data-volume="0"></iframe>
+       <!-- other kinds of video elements can be included as well. For more
+           information, see https://github.com/opendevise/bespoke-multimedia
+       -->
+  </section>
+
+  <section>
+      <p>Most Carnap exercises can be included</p>
+  </section>
+
+  <section>
+      <h2>Deductions</h2>
+      <!--
+          This is an example of how you can include a carnap proofchecker.
+          There's a correspondence between the different data attributes used
+          here and the different options available for exercises generated
+          using Carnap's pandoc. Change "data-carnap-system" to use a different
+          proof system, or data-carnap-goal to change the goal.
+      -->
+      <pre data-carnap-type="proofchecker"
+           data-carnap-goal=":|-:((P->Q)->P)->P"
            data-carnap-submission="none"
-           data-carnap-options="nocounterexample autoAtoms"
-           data-carnap-tabletype="simple"
-           data-carnap-system="gamutPND">
-  </pre>
-  </section>
-
-
-  <section>
-  <h2>Example 2</h2>
-  <p>In this example, we start with the conjunction $\wedge$ and move onto the negation $\neg$. This is because the order in which the proposition became a proposition was: first we took the basic propositional letters $p$ and $q$ and made the conjunction $p\wedge q$. Then we negated this to make $\neg (p \wedge q)$.</p>
-  <pre data-carnap-type="truthtable"
-           data-carnap-goal="~(p/\q)"
-           data-carnap-submission="none"
-           data-carnap-options="nocounterexample autoAtoms"
-           data-carnap-tabletype="simple"
-           data-carnap-system="gamutPND">
-  </pre>
-  </section>
-
-  <!-- Slide -->
-  <section>
-  <h2>Observation</h2>
-  <p>In the first two examples, at the last step we handled the negation. In this, we are applying the basic truth-table for negation which we learned earlier:
-  <pre data-carnap-type="truthtable"
-           data-carnap-goal="~p"
-           data-carnap-submission="none"
-           data-carnap-options="nocounterexample autoAtoms immutable nocheck"
-           data-carnap-tabletype="simple"
-           data-carnap-system="gamutPND">
-  FT
-  TF
-  </pre>
-  <p>We can apply this truth-table by thinking about its two rows as two rules governing negation:</p>
-  <ul>
-  <li><em>First rule governing negation</em>: If $\phi$ is true, then $\neg \phi$ is false.</li>
-  <li><em>Second rule governing negation</em>: If $\phi$ is false, then $\neg \phi$ is true.</li>
-  </ul>
+           data-carnap-system="prop"
+           data-carnap-guides="montague"
+           data-carnap-options="font">
+Show ((P -> Q)-> P) -> P
+      </pre>
+      <!-- ^^^ You need to be careful about whitespace when prepopulating the
+          deduction. That's why the Show line above has no leading whitespace.
+      -->
+      <p>Derivation documentation <a href="https://carnap.io/shared/gleachkr@gmail.com/carnap-derivations.pandoc" target="_blank">here</a></p>
   </section>
 
   <section>
-  <h2>Example 3</h2>
-  <p>In the first two examples, we had two propositional connectives. In this example, we have three connectives: two instances of negation and one instance of conjunction. The way in which the proposition $\neg p \wedge \neg q$ became a proposition was by first taking $p$, putting a negation on it to get $\neg p$, and then taking $q$ and putting a negation on it to get $\neg q$, and finally conjoining them together to get a conjunction $\neg p \wedge \neg q$.</p>
-  <pre data-carnap-type="truthtable"
-           data-carnap-goal="(~p/\~q)"
+      <h2>Truth Tables</h2>
+      <!-- Here are a couple examples of truth tables -->
+      <pre data-carnap-type="truthtable"
+           data-carnap-goal="~(P\/~P):|-:P/\~P"
            data-carnap-submission="none"
-           data-carnap-options="nocounterexample autoAtoms"
-           data-carnap-tabletype="simple"
-           data-carnap-system="gamutPND">
-  </pre>
+           data-carnap-options="hiddenGivens"
+           data-carnap-tabletype="validity">
+      </pre>
+    </section>
+    <section>
+      <p>(The below is a partial table looking for a counterexample to equivalence)
+      </p>
+      <pre data-carnap-type="truthtable"
+           data-carnap-goal="~P/\~Q,~P\/~Q"
+           data-carnap-submission="none"
+           data-carnap-options="hiddenGivens"
+           data-carnap-tabletype="partial">
+           --T----F--
+           --F----T--
+      </pre>
+      <p>Truth table documentation <a href="https://carnap.io/shared/gleachkr@gmail.com/carnap-truth-tables.pandoc" target="_blank">here</a></p>
   </section>
 
   <section>
-  <h2>Example 4</h2>
-  <p>Here is another example with three connectives, except this time the last connective is a disjunction.</p>
-  <pre data-carnap-type="truthtable"
-           data-carnap-goal="(~p\/~q)"
-           data-carnap-submission="none"
-           data-carnap-options="nocounterexample autoAtoms"
-           data-carnap-tabletype="simple"
-           data-carnap-system="gamutPND">
-  </pre>
-  </section>
-
-
-  <section>
-  <h2>Example 5</h2>
-  <p>In this example, we only have two connectives, but one of them is an implication. The way that the proposition $p\rightarrow \neg q$ became a proposition was by first putting a negation on the propositional letter to get $\neg q$, and then by forming an implication with antecedent $p$ and consequent $\neg q$. Hence, first we apply the rule for negation, and then we apply the rule for implication. To apply the rule for implication, we have to correctly identify the antecedent column ($p$) and the consequent column ($\neg q$).</p>
-  <pre data-carnap-type="truthtable"
-           data-carnap-goal="(p->~q)"
-           data-carnap-submission="none"
-           data-carnap-options="nocounterexample autoAtoms"
-           data-carnap-tabletype="simple"
-           data-carnap-system="gamutPND">
-  </pre>
+      <h2>Sequent Calculus Proofs</h2>
+      <pre data-carnap-type="sequentchecker"
+           data-carnap-goal="P->Q,Q->R:|-:P->R">
+      </pre>
+      <p>Press <code>Enter</code> to create a new sibling</p>
+      <p>Press <code>ctrl-enter</code> to create a new parent</p>
+      <p>Press <code>ctrl-delete</code> to remove a node.</p>
   </section>
 
   <section>
-  <h2>Example 6</h2>
-  <p>In this example, we have three connectives: reading from left-to-right, we see one conjunction and two disjunctions. But the order in which the proposition became a proposition was: we took the two letters $p,q$ and we formed both their conjunction $p\wedge q$ and their disjunction $p\vee q$, and then we took the disjunction of these to form $(p\wedge q)\vee (p\vee q)$. </p>
-  <pre data-carnap-type="truthtable"
-           data-carnap-goal="((p/\q)\/(p\/q))"
-           data-carnap-submission="none"
-           data-carnap-options="nocounterexample autoAtoms"
-           data-carnap-tabletype="simple"
-           data-carnap-system="gamutPND">
-  </pre>
+      <h2>Gentzen-Prawitz Natural Deduction</h2>
+      <pre data-carnap-type="treedeductionchecker"
+           data-carnap-goal="P->Q,Q->R:|-:P->R">
+      </pre>
   </section>
 
   <section>
-  <h2>Example 7</h2>
-  <p>This last example has three letters $p,q,r$. Since there are three lettters and each can take two truth-values (true, false), there are $3\times 2 = 8$ rows.</p>
-  <pre data-carnap-type="truthtable"
-           data-carnap-goal="(p->(q\/r))"
-           data-carnap-submission="none"
-           data-carnap-options="nocounterexample autoAtoms"
-           data-carnap-tabletype="simple"
-           data-carnap-system="gamutPND">
-  </pre>
+      <!-- If you have a couple of paragraphs that should be left-aligned, put them in a div -->
+      <div>
+          <p>See</p>
+          <p><a href="https://gleachkr.github.io/ProofJS/">https://gleachkr.github.io/ProofJS/</a></p>
+          <p> for more info on building tree-style proofs with ProofJS.</p>
+      </div>
   </section>
+  <section>
+      <h2>Models</h2>
+      <p>(this exercise is looking for a counterexample to validity)</p>
+      <pre data-carnap-type="countermodeler"
+           data-carnap-countermodelertype="validity"
+           data-carnap-goal="AxEyF(x,y):|-:ExAyF(x,y)">
+      </pre>
+
+      <p>Model checker documentation <a href="https://carnap.io/shared/gleachkr@gmail.com/carnap-modelchecker.pandoc" target="_blank">here</a></p>
+  </section>
+
+  <section>
+      <h2>Translations</h2>
+      <pre data-carnap-type="translate"
+           data-carnap-goal="Ax(F(x)->G(x))"
+           data-carnap-transtype="first-order"
+           data-carnap-problem="every dog has his day"
+           data-carnap-options="nocipher">Every dog has his day</pre>
+      <!-- whitespace is also important here ^^^ -->
+      <p>where <code>F</code> is "is a dog", and <code>G</code> is "has his day"</p>
+      <p>Translation documentation <a href="https://carnap.io/shared/gleachkr@gmail.com/carnap-translation.pandoc" target="_blank">here</a></p>
+  </section>
+
+  <section>
+    <p> There are also some basic niceties like progressively revealed bullet lists</p>
+    <ul class="build build-items">
+      <li>Bullet 1</li>
+      <li>Bullet 2</li>
+      <li>Bullet 3</li>
+    </ul>
+  </section>
+
+  <section>
+    <p>And there's much more you can do</p>
+    <ul class="build build-items">
+      <li>Edit HTML files under <em class="path">src</em> to create your own slide decks.</li>
+      <li>Edit <a href="http://stylus-lang.com">Stylus</a> styles in <em class="path">src/styles/user.styl</em> to affect the look of your slides.</li>
+      <li>Edit JavaScript in <em class="path">src/scripts/main.js</em> to achieve other interactive effects.</li>
+    </ul>
+    <p class="build">You can also find basic information on installing the slide-builder and getting your slides online in the <a href="https://github.com/gleachkr/SlideTemplate/README.md" >README</a></p>
+  </section>
+
+  <section>
+    <p>
+      Powered by Bespoke JS, due to <a href="https://twitter.com/markdalgleish"> -@markdalgleish</a>
+    </p>
+    <p>
+        For really advanced usage, check out their <a href="https://github.com/bespokejs/bespoke" target="_blank">documentation and examples</a>.
+    </p>
+  </section>
+</article>
 
 <script src="build/build.js"></script>
 <script src='https://carnap.io/static/ghcjs/allactions/runmain.js'></script>
-
 
 </body>
 </html>
