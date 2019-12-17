@@ -60,7 +60,7 @@ MathJax = {
   <!-- Slide -->
   <section>
   <h2>Example 1</h2>
-  <p>The truth-tables come pre-populated with a row corresponding to each combination of the truth-values of the basic propositional letters. In this first example, there are two basic propositional letters $p$ and $q$, and so there are four rows. We fill out the columns corresponding to each connective, starting with the connectives that come first in the order in which the proposition is built up out the propositional letters.</p>
+  <p>In this example, there are two basic propositional letters $p$ and $q$, and so there are four rows. We fill out the columns corresponding to each connective, starting with the connectives that come first in the order in which the proposition is built up out the propositional letters. </p>
   <pre data-carnap-type="truthtable"
            data-carnap-goal="~(p\/q)"
            data-carnap-submission="none"
@@ -68,8 +68,15 @@ MathJax = {
            data-carnap-tabletype="simple"
            data-carnap-system="gamutPND">
   </pre>
+  <p> Try it out yourself, and for the solution see the next slide. <p>
   </section>
 
+  <!-- Slide -->
+  <section>
+  <h2>Example 1 (Solution)</h2>
+  <p><video controls="" width="700" src="https://logic-teaching.github.io/prop/vid/truth_tables_example1.mp4"> </video></p>
+  <p>Note that in the videos, there is added highlighting. But this was added in a video editor afterwards. There is no highlighting in the program itself.</p>
+  </section>
 
   <section>
   <h2>Example 2</h2>
@@ -85,6 +92,12 @@ MathJax = {
 
   <!-- Slide -->
   <section>
+  <h2>Example 2 (Solution)</h2>
+  <p><video controls="" width="700" src="https://logic-teaching.github.io/prop/vid/truth_tables_example2.mp4"> </video></p>
+  </section>
+
+  <!-- Slide -->
+  <section>
   <h2>Observation</h2>
   <p>In the first two examples, at the last step we handled the negation. In this, we are applying the basic truth-table for negation which we learned earlier:
   <pre data-carnap-type="truthtable"
@@ -96,11 +109,12 @@ MathJax = {
   FT
   TF
   </pre>
-  <p>We can apply this truth-table by thinking about its two rows as two rules governing negation:</p>
+  <p>We can apply this truth-table by thinking about its two rows as two rules for negation: </p>
   <ul>
   <li>If $p$ is true, then $\neg p$ is false.</li>
   <li>If $p$ is false, then $\neg p$ is true.</li>
   </ul>
+
   </section>
 
   <section>
@@ -115,6 +129,12 @@ MathJax = {
   </pre>
   </section>
 
+  <!-- Slide -->
+  <section>
+  <h2>Example 3 (Solution)</h2>
+  <p><video controls="" width="700" src="https://logic-teaching.github.io/prop/vid/truth_tables_example3.mp4"> </video></p>
+  </section>
+
   <section>
   <h2>Example 4</h2>
   <p>Here is another example with three connectives, except this time the last connective is a disjunction.</p>
@@ -127,10 +147,15 @@ MathJax = {
   </pre>
   </section>
 
+  <!-- Slide -->
+  <section>
+  <h2>Example 4 (Solution)</h2>
+  <p><video controls="" width="700" src="https://logic-teaching.github.io/prop/vid/truth_tables_example4.mp4"> </video></p>
+  </section>
 
   <section>
   <h2>Example 5</h2>
-  <p>In this example, we only have two connectives, but one of them is an implication. The way that the proposition $p\rightarrow \neg q$ became a proposition was by first putting a negation on the propositional letter to get $\neg q$, and then by forming an implication with antecedent $p$ and consequent $\neg q$. Hence, first we apply the rule for negation, and then we apply the rule for implication. To apply the rule for implication, we have to correctly identify the antecedent column ($p$) and the consequent column ($\neg q$).</p>
+  <p>The way that the proposition $p\rightarrow \neg q$ became a proposition was by first putting a negation on the propositional letter to get $\neg q$, and then by forming an implication with antecedent $p$ and consequent $\neg q$. Hence, first we apply the rule for negation, and then we apply the rule for implication. To apply the rule for implication, we have to correctly identify the antecedent column ($p$) and the consequent column ($\neg q$).</p>
   <pre data-carnap-type="truthtable"
            data-carnap-goal="(p->~q)"
            data-carnap-submission="none"
@@ -138,6 +163,12 @@ MathJax = {
            data-carnap-tabletype="simple"
            data-carnap-system="gamutPND">
   </pre>
+  </section>
+
+  <!-- Slide -->
+  <section>
+  <h2>Example 5 (Solution)</h2>
+  <p><video controls="" width="700" src="https://logic-teaching.github.io/prop/vid/truth_tables_example5.mp4"> </video></p>
   </section>
 
   <section>
@@ -152,6 +183,12 @@ MathJax = {
   </pre>
   </section>
 
+  <!-- Slide -->
+  <section>
+  <h2>Example 6 (Solution)</h2>
+  <p><video controls="" width="700" src="https://logic-teaching.github.io/prop/vid/truth_tables_example6.mp4"> </video></p>
+  </section>
+
   <section>
   <h2>Example 7</h2>
   <p>This last example has three letters $p,q,r$. Since there are three lettters and each can take two truth-values (true, false), there are $3\times 2 = 8$ rows.</p>
@@ -162,6 +199,12 @@ MathJax = {
            data-carnap-tabletype="simple"
            data-carnap-system="gamutPND">
   </pre>
+  </section>
+
+  <!-- Slide -->
+  <section>
+  <h2>Example 7 (Solution)</h2>
+  <p><video controls="" width="700" src="https://logic-teaching.github.io/prop/vid/truth_tables_example7.mp4"> </video></p>
   </section>
 
 <script src="build/build.js"></script>
