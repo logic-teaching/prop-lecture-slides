@@ -25,15 +25,11 @@
 <!-- These two scripts enable mathjax -->
 <script>
 MathJax = {
-  messageStyle: 'none',
-  showProcessingMessages: false,
-  tex2jax: {
-    inlineMath: [['$', '$']],
-    displayMath: [['$$', '$$']],
-    processEscapes: true
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
   },
-  SVG: {
-    scale: (!!navigator.userAgent.match(/(mac)|(mobile)/i) ? 100 : 180)
+  svg: {
+    fontCache: 'global',
   }
 };
 </script>
