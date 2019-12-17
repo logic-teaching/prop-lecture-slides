@@ -94,6 +94,23 @@ MathJax = {
 
   <!-- Slide -->
   <section>
+  <h2>Example 1</h2>
+  <p><video loop controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_02_ex_and_intro.mp4"> </video></p>
+  <p>You can try it out here, or come back to this later to practice:</p>
+  <pre data-carnap-type="proofchecker"
+           data-carnap-goal=" p,q,r :|-: p/\(r/\q)"
+           data-carnap-submission="none"
+           data-carnap-system="gamutMPND"
+           data-carnap-guides="hausman"
+           data-carnap-options="font resize">
+p            :assumption
+q            :assumption
+r            :assumption
+  </pre>
+  </section>
+
+  <!-- Slide -->
+  <section>
   <h2>Elimination rule for conjunction</h2>
   <p>The rule is: if you have $\phi \wedge \psi$ on line $\ell_1$, then you may write $\phi$ on any subsequent line $\ell&gt;\ell_1$, and likewise you may write $\psi$ on any subsequent line $\ell&gt;\ell_1$.</p>
   <p>In terms of a picture, the rule is either this:</p>
@@ -104,7 +121,7 @@ MathJax = {
 
   <!-- Slide -->
   <section>
-  <p>Here’s a worked-out example:</p>
+  <h2>Example 2</h2>
   <p><video loop controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_05_ex_and_elim.mp4"> </video></p>
   <p>You can try it out here, or come back to this later to practice:</p>
   <pre data-carnap-type="proofchecker"
@@ -136,9 +153,10 @@ p/\(r/\q)    :assumption
 
   <!-- Slide -->
   <section>
+  <h2>Example 3</h2>
   <p>In the proof checker, to get the bracket one <strong>inserts a space</strong> before the formulas:</p>
-  <p><video loop controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_09_arrow_intro_ex.mp4"> </video></p>
-  <p>It is recommended that you try to emulate this example:</p>
+  <p><video loop controls="" width="250" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_09_arrow_intro_ex.mp4"> </video></p>
+  <p>Practice <strong>inserting the space</strong>:</p>
   <pre data-carnap-type="proofchecker"
            data-carnap-goal=" p->(q/\r) :|-: p->(r/\q)"
            data-carnap-submission="none"
@@ -151,7 +169,7 @@ p->(q/\r)    :assumption
 
   <!-- Slide -->
   <section>
-  <h2>Another example and proof-sketches by hand</h2>
+  <h2>Example 4 and proof-sketches by hand</h2>
   <p>As the proofs get more complex, it is advisable to try to sketch them out by hand before putting them into the proof checker. This allows you to see both the beginning and the end of the proof ahead of time, which will help you fill out the middle. Hence, when trying to prove something with $I\rightarrow$, just sketch out a space with the antecedent at the top and the consequent at the bottom, and try to figure out how to get from the antecedent to the consequent.</p>
   <p><video loop controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_10_more_complex_1_by_hand.mp4"> </video></p>
   </section>
@@ -159,7 +177,7 @@ p->(q/\r)    :assumption
 
   <!-- Slide -->
   <section>
-  <p>Now that we have done the proof by hand, we can put it into the proof-checker.</p>
+  <p>Now that we have done Example 4 by hand, we put it into the proof-checker:</p>
   <p><video loop controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_11_more_complex_1.mp4"> </video></p>
   <p>You should try it for yourself to get used to inputting into the proof-checker:</p>
   <pre data-carnap-type="proofchecker"
@@ -174,15 +192,15 @@ p->q    :assumption
 
   <!-- Slide -->
   <section>
-  <h2>Yet another example</h2>
+  <h2>Example 5</h2>
   <p>Here’s another example, which we first do by hand:</p>
-  <p><video loop controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_12_more_complex_2_by_hand.mp4"> </video></p>
+  <p><video loop controls="" width="400" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_12_more_complex_2_by_hand.mp4"> </video></p>
   </section>
 
 
   <!-- Slide -->
   <section>
-  <p>And then we put it into the proof-checker to check our work:</p>
+  <p>And then we put our proof of Example 5 into proof-checker:</p>
   <p><video loop controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_13_more_complex_2.mp4"> </video></p>
   <p>You can put it into the proof-checker as well:</p>
   <pre data-carnap-type="proofchecker"
@@ -197,7 +215,7 @@ p/\q    :assumption
 
   <!-- Slide -->
   <section>
-  <h2>Nested example of implication introduction</h2>
+  <h2>Example 6: Nested example of implication introduction</h2>
   <p>In this example, we need to do an arrow introduction within an arrow introduction.</p>
   <p>First we do a sketch by hand:</p>
   <p><video loop controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_14_nested_by_hand.mp4"> </video></p>
@@ -205,7 +223,7 @@ p/\q    :assumption
 
   <!-- Slide -->
   <section>
-  <p>Then we input our solution into the proof-checker to make sure its right:</p>
+  <p>Then we input our solution for Example 6 into the proof-checker:</p>
   <p><video loop controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_15_nested.mp4"> </video></p>
   <p>To get used to the proof-checker, again try to put your solution in:</p>
   <pre data-carnap-type="proofchecker"
