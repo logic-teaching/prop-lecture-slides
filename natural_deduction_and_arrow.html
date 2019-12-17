@@ -27,9 +27,6 @@
 MathJax = {
   tex: {
     inlineMath: [['$', '$'], ['\\(', '\\)']]
-  },
-  svg: {
-    fontCache: 'global',
   }
 };
 </script>
@@ -62,7 +59,7 @@ MathJax = {
   <!-- Slide -->
   <section>
   <p>Here is a simple worked-out example. As one can see: it is a list , some lines are assumptions, the other lines follow from earlier lines by rules.</p>
-  <p><video controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_00_example_proof.mp4"> </video></p>
+  <p><video loop controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_00_example_proof.mp4"> </video></p>
   </section>
 
 
@@ -85,7 +82,7 @@ MathJax = {
   <p>The rule is: if you have $\phi$ on a line $\ell_1$, and you have $\psi$ on line $\ell_2$, then you may write $\phi \wedge \psi$ on any subsequent line $\ell&gt; \ell_1, \ell_2$.</p>
   <p>This rule is abbreviated as $I\wedge$, where the ‘I’ is for <em>introduction</em>.</p>
   <p>In terms of a picture, the rule is:</p>
-  <p><video controls=""  width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_01_and_intro_v2.mp4"> </video></p>
+  <p><video loop controls=""  width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_01_and_intro_v2.mp4"> </video></p>
   <p>In the rule, it does not matter whether $\ell_1$ or $\ell_2$ comes first.</p>
   </section>
 
@@ -94,15 +91,15 @@ MathJax = {
   <h2>Elimination rule for conjunction</h2>
   <p>The rule is: if you have $\phi \wedge \psi$ on line $\ell_1$, then you may write $\phi$ on any subsequent line $\ell&gt;\ell_1$, and likewise you may write $\psi$ on any subsequent line $\ell&gt;\ell_1$.</p>
   <p>In terms of a picture, the rule is either this:</p>
-  <p><video controls=""  width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_03_and_elim1.mp4"> </video>
+  <p><video loop controls=""  width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_03_and_elim1.mp4"> </video>
   <p>or this:</p>
-  <video controls=""  width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_04_and_elim2.mp4"> </video></p>
+  <video loop controls=""  width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_04_and_elim2.mp4"> </video></p>
   </section>
 
   <!-- Slide -->
   <section>
   <p>Here’s a worked-out example:</p>
-  <p><video controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_05_ex_and_elim.mp4"> </video></p>
+  <p><video loop controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_05_ex_and_elim.mp4"> </video></p>
   <p>You can try it out here, or come back to this later to practice:</p>
   <pre data-carnap-type="proofchecker"
            data-carnap-goal=" p/\(r/\q) :|-: r"
@@ -117,7 +114,7 @@ p/\(r/\q)    :assumption
   <!-- Slide -->
   <section>
   <h2>Motivating the introduction rule for implication</h2>
-  <p>The introduction rule for implication should give you some way of first coming to assert $\varphi\rightarrow \psi$, a formula whose main connective is the implication sign.</p>
+  <p>The introduction rule for implication should give you some way of first coming to assert $\phi\rightarrow \psi$, a formula whose main connective is the implication sign.</p>
   <p>The basic idea of the introduction rule for implication is that there is a proof of the consequent from the <em>hypothetical</em> assumption of the antecedent.</p>
   <p>Consider my reasoning for “if Miami is the capital of Florida, then the capital of Florida is on the beach.” One natural way to think of this is that the speaker has the following simple argument in mind: “If we hypothetically suppose that Miami is the capital of Florida, then since we all know that Miami is on the beach, we can conclude that the capital of Florida is on the beach.”</p>
   </pre>
@@ -126,15 +123,15 @@ p/\(r/\q)    :assumption
   <!-- Slide -->
   <section>
   <h2>The introduction rule for implication</h2>
-  <p>The rule is: suppose that consecutive lines $\ell_1-\ell_n$ constitute a proof with premise $\varphi$ and conclusion $\psi$. Then one may introduce $\varphi\rightarrow \psi$ at line $\ell_n+1$, so long as one brackets off $\ell_1-\ell_n$ and never appeals to them again.</p>
+  <p>The rule is: suppose that consecutive lines $\ell_1-\ell_n$ constitute a proof with premise $\phi$ and conclusion $\psi$. Then one may introduce $\phi\rightarrow \psi$ at line $\ell_n+1$, so long as one brackets off $\ell_1-\ell_n$ and never appeals to them again.</p>
   <p>In a picture, it is:</p>
-  <p><video controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_08_arrow_intro.mp4"> </video></p>
+  <p><video loop controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_08_arrow_intro.mp4"> </video></p>
   </section>
 
   <!-- Slide -->
   <section>
   <p>In the proof checker, to get the bracket one <strong>inserts a space</strong> before the formulas:</p>
-  <p><video controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_09_arrow_intro_ex.mp4"> </video></p>
+  <p><video loop controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_09_arrow_intro_ex.mp4"> </video></p>
   <p>It is recommended that you try to emulate this example:</p>
   <pre data-carnap-type="proofchecker"
            data-carnap-goal=" p->(q/\r) :|-: p->(r/\q)"
@@ -150,14 +147,14 @@ p->(q/\r)    :assumption
   <section>
   <h2>Another example and proof-sketches by hand</h2>
   <p>As the proofs get more complex, it is advisable to try to sketch them out by hand before putting them into the proof checker. This allows you to see both the beginning and the end of the proof ahead of time, which will help you fill out the middle. Hence, when trying to prove something with $I\rightarrow$, just sketch out a space with the antecedent at the top and the consequent at the bottom, and try to figure out how to get from the antecedent to the consequent.</p>
-  <p><video controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_10_more_complex_1_by_hand.mp4"> </video></p>
+  <p><video loop controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_10_more_complex_1_by_hand.mp4"> </video></p>
   </section>
 
 
   <!-- Slide -->
   <section>
   <p>Now that we have done the proof by hand, we can put it into the proof-checker.</p>
-  <p><video controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_11_more_complex_1.mp4"> </video></p>
+  <p><video loop controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_11_more_complex_1.mp4"> </video></p>
   <p>You should try it for yourself to get used to inputting into the proof-checker:</p>
   <pre data-carnap-type="proofchecker"
            data-carnap-goal=" p->q :|-: p->(p/\q)"
@@ -173,14 +170,14 @@ p->q    :assumption
   <section>
   <h2>Yet another example</h2>
   <p>Here’s another example, which we first do by hand:</p>
-  <p><video controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_12_more_complex_2_by_hand.mp4"> </video></p>
+  <p><video loop controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_12_more_complex_2_by_hand.mp4"> </video></p>
   </section>
 
 
   <!-- Slide -->
   <section>
   <p>And then we put it into the proof-checker to check our work:</p>
-  <p><video controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_13_more_complex_2.mp4"> </video></p>
+  <p><video loop controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_13_more_complex_2.mp4"> </video></p>
   <p>You can put it into the proof-checker as well:</p>
   <pre data-carnap-type="proofchecker"
            data-carnap-goal=" p/\q :|-: p->q"
@@ -197,13 +194,13 @@ p/\q    :assumption
   <h2>Nested example of implication introduction</h2>
   <p>In this example, we need to do an arrow introduction within an arrow introduction.</p>
   <p>First we do a sketch by hand:</p>
-  <p><video controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_14_nested_by_hand.mp4"> </video></p>
+  <p><video loop controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_14_nested_by_hand.mp4"> </video></p>
   </section>
 
   <!-- Slide -->
   <section>
   <p>Then we input our solution into the proof-checker to make sure its right:</p>
-  <p><video controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_15_nested.mp4"> </video></p>
+  <p><video loop controls="" width="300" src="https://logic-teaching.github.io/prop/vid/natural_deduction_and_arrow_15_nested.mp4"> </video></p>
   <p>To get used to the proof-checker, again try to put your solution in:</p>
   <pre data-carnap-type="proofchecker"
            data-carnap-goal=" p->(q->r) :|-: (q->(p->r))"
@@ -221,13 +218,13 @@ p->(q->r)      :assumption
   <p>The conventions on brackets are as follows:</p>
   <ol>
   <li>
-  <p>If you’re trying to apply implication introduction to get $\varphi\rightarrow \psi$, then you start with a line that has $\varphi$ in it and is marked <em>assumption</em>, and then you apply rules until you get $\psi$.</p>
+  <p>If you’re trying to apply implication introduction to get $\phi\rightarrow \psi$, then you start with a line that has $\phi$ in it and is marked <em>assumption</em>, and then you apply rules until you get $\psi$.</p>
   </li>
   <li>
-  <p>At that point when you have obtained $\psi$, you write $\varphi\rightarrow \psi$ and explicitly indicate that you applied the rule $I\rightarrow$.</p>
+  <p>At that point when you have obtained $\psi$, you write $\phi\rightarrow \psi$ and explicitly indicate that you applied the rule $I\rightarrow$.</p>
   </li>
   <li>
-  <p>Further, you draw brackets around the lines starting at $\varphi$ and ending at $\psi$, and you make sure that you never appeal to things within the brackets.</p>
+  <p>Further, you draw brackets around the lines starting at $\phi$ and ending at $\psi$, and you make sure that you never appeal to things within the brackets.</p>
   </li>
   </ol>
   <p>The reason for this last point is that we draw the brackets to remind us not to appeal to things inside the brackets. The mnemonic is: stay outside the brackets once you’ve drawn the brackets.</p>
