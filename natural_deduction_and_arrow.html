@@ -29,7 +29,8 @@ MathJax = {
     inlineMath: [['$', '$'], ['\\(', '\\)']]
   },
   svg: {
-    fontCache: 'global'
+    fontCache: 'global',
+    scale: (!!navigator.userAgent.match(/(mac)|(mobile)/i) ? 100 : 180)
   }
 };
 </script>
